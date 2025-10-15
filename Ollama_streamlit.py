@@ -96,7 +96,7 @@ with st.sidebar:
         st.cache_data.clear()
         st.rerun()
 
-st.title("Your Personal Assistant Powered by Ollama")
+st.title("What are you working on?")
 
 # --- Session state ---
 if "messages" not in st.session_state:
@@ -110,7 +110,7 @@ for m in st.session_state.messages:
         st.markdown(m["content"])
 
 # --- Input ---
-prompt = st.chat_input("Type your message…")
+prompt = st.chat_input("Ask anything")
 if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
