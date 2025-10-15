@@ -75,7 +75,7 @@ def stream_chat(base_url: str, api_key: str, model: str, messages: list[dict], t
 
 # --- Sidebar ---
 with st.sidebar:
-    st.header("⚙️ Settings")
+    st.header("Settings")
     base_choice = st.radio(
         "Endpoint",
         ["Local (http://localhost:11434)", "Cloud (https://ollama.com)", "Custom"],
@@ -96,7 +96,7 @@ with st.sidebar:
         st.cache_data.clear()
         st.rerun()
 
-st.title("💬 Ollama Chat (Streamlit)")
+st.title("Your Personal Assistant Powered by Ollama")
 
 # --- Session state ---
 if "messages" not in st.session_state:
@@ -134,7 +134,7 @@ if prompt:
 # Utilities
 col1, col2 = st.columns(2)
 with col1:
-    if st.button("🧹 Clear chat"):
+    if st.button("Clear chat"):
         st.session_state.messages = [{"role": "system", "content": "You are a helpful assistant."}]
         st.rerun()
 with col2:
